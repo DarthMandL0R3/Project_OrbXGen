@@ -20,7 +20,7 @@ OrbXGen is an attempt to modernize observability by streamlining (plus packaging
 ## About Me
 
 I am from Malaysia :malaysia: and would love feedbacks on the project :wink:
-Hit me up here or at <i class="fa-brands fa-square-linkedin"></i>
+Hit me up here or at <i class="fa-brands fa-square-linkedin" role="img"></i>
 
 
 ---
