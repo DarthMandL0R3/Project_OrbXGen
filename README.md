@@ -19,8 +19,8 @@ OrbXGen is an attempt to modernize observability by streamlining (plus packaging
 
 ## About Me
 
-I am a Malaysian cloud engineer and currently dabbling in observability space :ringed_planet:
-I would love feedbacks on the project :wink:
+I am a Malaysian cloud engineer and currently dabbling in observability space :ringed_planet:\
+I would love feedbacks on the project :wink:\
 Hit me up here or at LinkedIn
 
 ---
