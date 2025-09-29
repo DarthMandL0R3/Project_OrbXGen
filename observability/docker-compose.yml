@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.47.0
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--web.enable-lifecycle'
+    volumes:
+      - ./prometheus/config:/etc/prometheus
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:10.1.5
+    container_name: grafana
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.85.0
+    container_name: otel-collector
+    command: [--config=/etc/otel-collector-config.yml]
+    volumes:
+      - ./opentelemetry/collector:/etc
+    ports:
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
+      - "8888:8888" # Prometheus metrics
+      - "13133:13133" # health_check
+
+volumes:
+  prometheus_data:
+  grafana_data:
